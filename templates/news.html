@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+ <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+  <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+{% block title %}
+
+    <h1>News 11:30 </h1>
+    <h2>{{ count }}</h2>
+
+
+ {% endblock %}
+
+<!-- Body -->
+
+{% block content %}
+
+
+ {% for new in news %}
+   <div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+      <img src="{{new.news_image.url}}"class="card-img-top" alt="...">
+        <h5 class="card-title">{{new.news_title | upper}}</h5>
+        <p class="card-text">{{new.news_description|safe|truncatewords_html:"50"}}</p>
+        <a href="news/{{new.slug}}" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
+
+
+
