@@ -1,11 +1,11 @@
 from .base import *
-
+import os
 
 
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['aavgoustinos.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost','aavgoustinos.pythonanywhere.com']
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -22,12 +22,13 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'aavgoustinos$apac',
         'USER': 'aavgoustinos',
-        'PASSWORD': 'aavgoustinos-123%',
+        'PASSWORD': 'bufallo-1',
         'HOST': 'aavgoustinos.mysql.pythonanywhere-services.com',
     }
 }
@@ -38,3 +39,6 @@ STATIC_ROOT= os.path.join(BASE_DIR,'static')
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+

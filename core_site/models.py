@@ -31,7 +31,7 @@ class Page(models.Model):
     page_description = RichTextField(config_name='default', blank=True)
     date = models.DateField(default=datetime.now)
     slug = models.SlugField(max_length=200, unique=True)
-    page_online = models.BooleanField("Online Click Yes ",default=True)
+    page_online = models.BooleanField("Online Click, Yes ",default=True)
 
     def __str__(self):
         return  self.page_title
